@@ -31,8 +31,8 @@
                     <tr>
                         <td>${department.id}</td>
                         <td>${department.shortname}</td>
-                        <td>${department.name}</td>
-                        <td><a href="#">Delete</a></td>
+                        <td>${department.name}</td>                       
+                        <td><a class="btn btn-danger" href="/task1/app/department/delete?departmentId=${department.id}">Delete</a></td>
                         <td><a href="#">Edit</a></td>
                     </tr>
                 </c:forEach>

@@ -75,12 +75,6 @@ public class Department {
             return false;
         }
         final Department other = (Department) obj;
-        if (!Objects.equals(this.shortname, other.shortname)) {
-            return false;
-        }
-        if (!Objects.equals(this.name, other.name)) {
-            return false;
-        }
         if (!Objects.equals(this.id, other.id)) {
             return false;
         }

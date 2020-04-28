@@ -8,6 +8,7 @@ package petrovic.jovan.fon.fisweb.action.factory;
 import petrovic.jovan.fon.fisweb.action.AbstractAction;
 import petrovic.jovan.fon.fisweb.action.impl.AddDepartmentAction;
 import petrovic.jovan.fon.fisweb.action.impl.AllDepartmentsAction;
+import petrovic.jovan.fon.fisweb.action.impl.DeleteDepartmentAction;
 import petrovic.jovan.fon.fisweb.action.impl.LoginAction;
 import petrovic.jovan.fon.fisweb.action.impl.SaveDepartmentAction;
 import petrovic.jovan.fon.fisweb.constants.ActionConstants;
@@ -30,6 +31,9 @@ public class ActionFactory {
         }
         if(actionName.equals(ActionConstants.URL_SAVE_DEPARTMENT)) {
             action = new SaveDepartmentAction();
+        }
+        if(actionName.equals(ActionConstants.URL_DELETE_DEPARTMENT)) {
+            action = new DeleteDepartmentAction();
         }
         return action;
     }

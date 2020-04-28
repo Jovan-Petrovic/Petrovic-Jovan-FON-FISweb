@@ -12,7 +12,7 @@
         <title>JSP Page</title>
     </head>
     <body>
-        Login as:${sessionScope.loginUser.firstname} ${sessionScope.loginUser.lastname}, <a href="#">Logout</a>
+        Login as:${sessionScope.loginUser.firstname} ${sessionScope.loginUser.lastname}, <a href="/task1">Logout</a>
         <div>
             <a href="/task1/app/department/all"> All departments</a>
         </div>
