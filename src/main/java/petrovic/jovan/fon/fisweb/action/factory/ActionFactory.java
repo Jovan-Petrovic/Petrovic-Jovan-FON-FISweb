@@ -6,7 +6,10 @@
 package petrovic.jovan.fon.fisweb.action.factory;
 
 import petrovic.jovan.fon.fisweb.action.AbstractAction;
+import petrovic.jovan.fon.fisweb.action.impl.AddDepartmentAction;
+import petrovic.jovan.fon.fisweb.action.impl.AllDepartmentsAction;
 import petrovic.jovan.fon.fisweb.action.impl.LoginAction;
+import petrovic.jovan.fon.fisweb.action.impl.SaveDepartmentAction;
 import petrovic.jovan.fon.fisweb.constants.ActionConstants;
 
 /**
@@ -18,6 +21,15 @@ public class ActionFactory {
         AbstractAction action = null;
         if(actionName.equals(ActionConstants.URL_LOGIN)) {
             action = new LoginAction();
+        }
+        if(actionName.equals(ActionConstants.URL_ALL_DEPARTMENTS)) {
+            action = new AllDepartmentsAction();
+        }
+        if(actionName.equals(ActionConstants.URL_ADD_DEPARTMENT)) {
+            action = new AddDepartmentAction();
+        }
+        if(actionName.equals(ActionConstants.URL_SAVE_DEPARTMENT)) {
+            action = new SaveDepartmentAction();
         }
         return action;
     }

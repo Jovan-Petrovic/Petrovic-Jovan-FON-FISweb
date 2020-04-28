@@ -18,7 +18,6 @@ public class ApplicationController {
 
     public String processRequest(String pathInfo, HttpServletRequest request) {
         String nextPage = PageConstants.VIEW_DEFAULT_ERROR;
-        
         AbstractAction action = ActionFactory.createActionFactory(pathInfo);
         if (action != null) {
             nextPage = action.execute(request);

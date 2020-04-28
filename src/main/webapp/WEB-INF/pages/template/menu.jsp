@@ -14,10 +14,10 @@
     <body>
         Login as:${sessionScope.loginUser.firstname} ${sessionScope.loginUser.lastname}, <a href="#">Logout</a>
         <div>
-            <a href="/njt/app/department/all"> All users</a>
+            <a href="/task1/app/department/all"> All departments</a>
         </div>
         <div>
-            <a href="/njt/app/department/add"> Add user</a>
+            <a href="/task1/app/department/add"> Add department</a>
         </div>
     </body>
 </html>

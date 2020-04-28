@@ -62,7 +62,7 @@ public class Department {
         hash = 23 * hash + Objects.hashCode(this.name);
         return hash;
     }
-    
+
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {
@@ -75,12 +75,16 @@ public class Department {
             return false;
         }
         final Department other = (Department) obj;
+        if (!Objects.equals(this.shortname, other.shortname)) {
+            return false;
+        }
+        if (!Objects.equals(this.name, other.name)) {
+            return false;
+        }
         if (!Objects.equals(this.id, other.id)) {
             return false;
         }
         return true;
     }
-    
-    
     
 }

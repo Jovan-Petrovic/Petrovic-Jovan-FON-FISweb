@@ -33,6 +33,8 @@ public class MyApplicationContextListener implements ServletContextListener {
         sce.getServletContext().setAttribute("users", createUsers());
         // lista departmana
         sce.getServletContext().setAttribute("departments", new ArrayList<>());
+        // max department id
+        sce.getServletContext().setAttribute("maxId", 0L);
     }
 
     @Override

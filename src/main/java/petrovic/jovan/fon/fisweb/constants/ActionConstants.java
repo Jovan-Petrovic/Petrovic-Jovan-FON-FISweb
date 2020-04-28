@@ -11,7 +11,7 @@ package petrovic.jovan.fon.fisweb.constants;
  */
 public interface ActionConstants {
     public static final String URL_LOGIN = "/login";
-    public static final String URL_ALL_DEPARTMENT = "/department/all";
+    public static final String URL_ALL_DEPARTMENTS = "/department/all";
     public static final String URL_ADD_DEPARTMENT = "/department/add";
     public static final String URL_SAVE_DEPARTMENT = "/department/save";
 }
