@@ -25,6 +25,7 @@ public class ViewResolver {
                 put(PageConstants.VIEW_DEFAULT_ERROR,PageConstants.PAGE_DEFAULT_ERROR );
                 put(PageConstants.VIEW_ALL_DEPARTMENTS,PageConstants.PAGE_ALL_DEPARTMENTS );
                 put(PageConstants.VIEW_ADD_DEPARTMENT,PageConstants.PAGE_ADD_DEPARTMENT );
+                put(PageConstants.VIEW_EDIT_DEPARTMENT,PageConstants.PAGE_EDIT_DEPARTMENT );
             }
         };
     }

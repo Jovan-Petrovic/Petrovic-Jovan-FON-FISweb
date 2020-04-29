@@ -9,8 +9,10 @@ import petrovic.jovan.fon.fisweb.action.AbstractAction;
 import petrovic.jovan.fon.fisweb.action.impl.AddDepartmentAction;
 import petrovic.jovan.fon.fisweb.action.impl.AllDepartmentsAction;
 import petrovic.jovan.fon.fisweb.action.impl.DeleteDepartmentAction;
+import petrovic.jovan.fon.fisweb.action.impl.EditDepartmentAction;
 import petrovic.jovan.fon.fisweb.action.impl.LoginAction;
 import petrovic.jovan.fon.fisweb.action.impl.SaveDepartmentAction;
+import petrovic.jovan.fon.fisweb.action.impl.UpdateDepartmentAction;
 import petrovic.jovan.fon.fisweb.constants.ActionConstants;
 
 /**
@@ -34,6 +36,12 @@ public class ActionFactory {
         }
         if(actionName.equals(ActionConstants.URL_DELETE_DEPARTMENT)) {
             action = new DeleteDepartmentAction();
+        }
+        if(actionName.equals(ActionConstants.URL_EDIT_DEPARTMENT)) {
+            action = new EditDepartmentAction();
+        }
+        if(actionName.equals(ActionConstants.URL_UPDATE_DEPARTMENT)) {
+            action = new UpdateDepartmentAction();
         }
         return action;
     }
