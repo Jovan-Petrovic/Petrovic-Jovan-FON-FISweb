@@ -6,6 +6,8 @@
 package petrovic.jovan.fon.fisweb.controller;
 
 import javax.servlet.http.HttpServletRequest;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import petrovic.jovan.fon.fisweb.action.AbstractAction;
 import petrovic.jovan.fon.fisweb.action.factory.ActionFactory;
 import petrovic.jovan.fon.fisweb.constants.PageConstants;
@@ -14,11 +16,15 @@ import petrovic.jovan.fon.fisweb.constants.PageConstants;
  *
  * @author KORISNIK
  */
+@Component
 public class ApplicationController {
 
+    @Autowired
+    private ActionFactory actionFactory;
+    
     public String processRequest(String pathInfo, HttpServletRequest request) {
         String nextPage = PageConstants.VIEW_DEFAULT_ERROR;
-        AbstractAction action = ActionFactory.createActionFactory(pathInfo);
+        AbstractAction action = actionFactory.createActionFactory(pathInfo);
         if (action != null) {
             nextPage = action.execute(request);
         }

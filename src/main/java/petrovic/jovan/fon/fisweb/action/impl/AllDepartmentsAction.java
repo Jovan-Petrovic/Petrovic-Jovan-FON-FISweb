@@ -6,6 +6,7 @@
 package petrovic.jovan.fon.fisweb.action.impl;
 
 import javax.servlet.http.HttpServletRequest;
+import org.springframework.stereotype.Component;
 import petrovic.jovan.fon.fisweb.action.AbstractAction;
 import petrovic.jovan.fon.fisweb.constants.PageConstants;
 
@@ -13,6 +14,7 @@ import petrovic.jovan.fon.fisweb.constants.PageConstants;
  *
  * @author KORISNIK
  */
+@Component
 public class AllDepartmentsAction extends AbstractAction{
 
     @Override

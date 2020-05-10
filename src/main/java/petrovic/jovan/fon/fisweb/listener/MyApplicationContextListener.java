@@ -9,6 +9,9 @@ import java.util.ArrayList;
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 import javax.servlet.annotation.WebListener;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import petrovic.jovan.fon.fisweb.config.MyAppConfig;
 import petrovic.jovan.fon.fisweb.model.User;
 
 /**
@@ -35,6 +38,10 @@ public class MyApplicationContextListener implements ServletContextListener {
         sce.getServletContext().setAttribute("departments", new ArrayList<>());
         // max department id
         sce.getServletContext().setAttribute("maxId", 0L);
+        
+        // ucitaj spring context
+        ApplicationContext applicationContext = new AnnotationConfigApplicationContext(MyAppConfig.class);
+        sce.getServletContext().setAttribute("applicationContext", applicationContext);
     }
 
     @Override

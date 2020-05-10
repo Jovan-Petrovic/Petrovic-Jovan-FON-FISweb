@@ -7,12 +7,14 @@ package petrovic.jovan.fon.fisweb.viewresolver;
 
 import java.util.HashMap;
 import java.util.Map;
+import org.springframework.stereotype.Component;
 import petrovic.jovan.fon.fisweb.constants.PageConstants;
 
 /**
  *
  * @author KORISNIK
  */
+@Component
 public class ViewResolver {
 
     private final Map<String, String> viewPageMap;

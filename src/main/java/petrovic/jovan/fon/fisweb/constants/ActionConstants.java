@@ -17,4 +17,5 @@ public interface ActionConstants {
     public static final String URL_DELETE_DEPARTMENT = "/department/delete";
     public static final String URL_EDIT_DEPARTMENT = "/department/edit";
     public static final String URL_UPDATE_DEPARTMENT = "/department/update";
+    public static final String URL_LOGOUT = "/logout";
 }

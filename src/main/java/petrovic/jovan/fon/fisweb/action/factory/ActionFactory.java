@@ -5,6 +5,8 @@
  */
 package petrovic.jovan.fon.fisweb.action.factory;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import petrovic.jovan.fon.fisweb.action.AbstractAction;
 import petrovic.jovan.fon.fisweb.action.impl.AddDepartmentAction;
 import petrovic.jovan.fon.fisweb.action.impl.AllDepartmentsAction;
@@ -19,29 +21,51 @@ import petrovic.jovan.fon.fisweb.constants.ActionConstants;
  *
  * @author KORISNIK
  */
+@Component
 public class ActionFactory {
-    public static AbstractAction createActionFactory(String actionName) {
+    
+    @Autowired
+    private AbstractAction loginAction;
+    @Autowired
+    private AbstractAction allDepartmentsAction;
+    @Autowired
+    private AbstractAction addDepartmentAction;
+    @Autowired
+    private AbstractAction saveDepartmentAction;
+    @Autowired
+    private AbstractAction deleteDepartmentAction;
+    @Autowired
+    private AbstractAction editDepartmentAction;
+    @Autowired
+    private AbstractAction updateDepartmentAction;
+    @Autowired
+    private AbstractAction logoutAction;
+    
+    public AbstractAction createActionFactory(String actionName) {
         AbstractAction action = null;
         if(actionName.equals(ActionConstants.URL_LOGIN)) {
-            action = new LoginAction();
+            action = loginAction;
         }
         if(actionName.equals(ActionConstants.URL_ALL_DEPARTMENTS)) {
-            action = new AllDepartmentsAction();
+            action = allDepartmentsAction;
         }
         if(actionName.equals(ActionConstants.URL_ADD_DEPARTMENT)) {
-            action = new AddDepartmentAction();
+            action = addDepartmentAction;
         }
         if(actionName.equals(ActionConstants.URL_SAVE_DEPARTMENT)) {
-            action = new SaveDepartmentAction();
+            action = saveDepartmentAction;
         }
         if(actionName.equals(ActionConstants.URL_DELETE_DEPARTMENT)) {
-            action = new DeleteDepartmentAction();
+            action = deleteDepartmentAction;
         }
         if(actionName.equals(ActionConstants.URL_EDIT_DEPARTMENT)) {
-            action = new EditDepartmentAction();
+            action = editDepartmentAction;
         }
         if(actionName.equals(ActionConstants.URL_UPDATE_DEPARTMENT)) {
-            action = new UpdateDepartmentAction();
+            action = updateDepartmentAction;
+        }
+        if(actionName.equals(ActionConstants.URL_LOGOUT)) {
+            action = logoutAction;
         }
         return action;
     }

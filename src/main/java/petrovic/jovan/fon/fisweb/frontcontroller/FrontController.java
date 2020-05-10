@@ -6,11 +6,14 @@
 package petrovic.jovan.fon.fisweb.frontcontroller;
 
 import java.io.IOException;
+import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationContext;
 import petrovic.jovan.fon.fisweb.controller.ApplicationController;
 import petrovic.jovan.fon.fisweb.viewresolver.ViewResolver;
 
@@ -20,8 +23,10 @@ import petrovic.jovan.fon.fisweb.viewresolver.ViewResolver;
  */
 @WebServlet(name = "FrontController", urlPatterns = {"/app/*"})
 public class FrontController extends HttpServlet {
-
+    @Autowired
     private ApplicationController applicationController;
+    
+    @Autowired
     private ViewResolver viewResolver;
     
     /**
@@ -84,14 +89,25 @@ public class FrontController extends HttpServlet {
         return "Short description";
     }// </editor-fold>
 
+//    @Override
+//    public void init() throws ServletException {
+//        System.out.println("=======================================");
+//        System.out.println("==============init()==============");
+//        System.out.println("=======================================");
+//        super.init();
+//        applicationController = new ApplicationController();
+//        viewResolver = new ViewResolver();
+//    }
+
     @Override
-    public void init() throws ServletException {
-        System.out.println("=======================================");
-        System.out.println("==============init()==============");
-        System.out.println("=======================================");
-        super.init();
-        applicationController = new ApplicationController();
-        viewResolver = new ViewResolver();
+    public void init(ServletConfig config) throws ServletException {
+        super.init(config);
+        ApplicationContext applicationContext = (ApplicationContext) config.getServletContext().getAttribute("applicationContext");
+        applicationContext.getAutowireCapableBeanFactory().autowireBean(this);
     }
+
+    
+    
+    
   
 }
