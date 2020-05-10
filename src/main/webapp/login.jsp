@@ -4,7 +4,8 @@
     Author     : KORISNIK
 --%>
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page contentType="text/html" pageEncoding="UTF-8"%> 
+<%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -16,21 +17,32 @@
         <div class="container">
             <div class="row">
                 <div>
-                    <h1>This is login.jsp page!</h1>
-                    ${message}
-                    <form action="/task1/app/login" method="post">
-                        Email:
-                        <div>
-                            <input type="text" id="email" name="email"/>
-                        </div>
-                        <p/>
-                        Password:
-                        <div>
-                            <input type="password" id="password" name="password"/>
-                        </div>
-                        <p/>
-                        <input class="btn btn-outline-success" type="submit" id="Login" value="Log in"/>
-                    </form>
+                    <a href="?Locale=en_US">en_US</a>|<a href="?Locale=sr_RS">sr_RS</a>
+                    <fmt:setLocale value="${param.Locale}"/>
+                    <div>
+                        Locale: ${param.Locale}
+                    </div>
+                    <fmt:bundle basename="i18n/config">
+                        <h1>
+                            <fmt:message key="login.message.info"></fmt:message>
+                        </h1>
+                        ${message}
+                        <form action="/task1/app/login" method="post">
+                            <!-- Email: -->
+                            <fmt:message key="label.email"></fmt:message>
+                            <div>
+                                <input type="text" id="email" name="email"/>
+                            </div>
+                            <p/>
+                            <!-- Password: -->
+                            <fmt:message key="label.password"></fmt:message>
+                            <div>
+                                <input type="password" id="password" name="password"/>
+                            </div>
+                            <p/>
+                            <input class="btn btn-outline-success" type="submit" id="Login" value="<fmt:message key="button.login"></fmt:message>"/>
+                        </form>
+                    </fmt:bundle>
                 </div>
             </div>
         </div>
